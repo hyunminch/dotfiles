@@ -15,7 +15,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     echo "Installing Scala 2.12.4..."
     sudo wget http://scala-lang.org/files/archive/scala-2.12.4.deb
     sudo dpkg -i scala-2.12.4.deb
-    rm scala-2.12.4.deb
+    rm -f scala-2.12.4.deb
 
     echo "Not installing Dotty for Ubuntu."
     echo "Visit http://dotty.epfl.ch/ if you need to."
