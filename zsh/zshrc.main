@@ -1,0 +1,28 @@
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export GOPATH=$HOME/go
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+ZSH_THEME="agnoster"
+
+export UPDATE_ZSH_DAYS=1
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+
+HIST_STAMPS="mm/dd/yyyy"
+plugins=(git kubectl osx)
+
+# oh-my-zsh!
+source $ZSH/oh-my-zsh.sh
+
+# Source .zshrc.custom.sh for non version controlled private settings.
+source $HOME/.zshrc.custom.sh
+
+# Requires neovim plugin configuration.
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Create aliases for nvim.
+alias vi=nvim
+alias vim=nvim
