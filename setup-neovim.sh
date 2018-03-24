@@ -4,7 +4,7 @@ echo "Setting up neovim..."
 
 # Install neovim
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  distro = $(awk -F= '/^NAME/{ print $2 }' /etc/os-release | sed 's/"//g')
+  distro=$(awk -F= '/^NAME/{ print $2 }' /etc/os-release | sed 's/"//g')
   if [[ "$distro" == "Ubuntu" ]]; then
     sudo apt-get install software-properties-common
     sudo add-apt-repository ppa:neovim-ppa/unstable

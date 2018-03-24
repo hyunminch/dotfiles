@@ -3,7 +3,7 @@
 echo "Installing basic packages..."
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then  
-  distro = $(awk -F= '/^NAME/{ print $2 }' /etc/os-release | sed 's/"//g')
+  distro=$(awk -F= '/^NAME/{ print $2 }' /etc/os-release | sed 's/"//g')
   if [[ "$distro" == "Ubuntu" ]]; then
     echo "Updating apt..."
     sudo apt update
