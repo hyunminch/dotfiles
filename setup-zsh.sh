@@ -2,8 +2,6 @@
 
 echo "Setting up zsh..."
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 if [[ "$OSTYPE" == "linux-gnu" ]]; then  
   sudo apt install zsh
   sudo chsh -s /bin/zsh
@@ -21,9 +19,18 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 echo "Copying zshrc to ~/.zshrc..."
 mkdir -p $HOME/go
 
-ln -s zsh/zshrc.main $HOME/.zshrc.main
+if [[ ! -f $HOME/.zshrc.main ]]; then
+  ln -s $HOME/dotfiles/zsh/zshrc.main $HOME/.zshrc.main
+else
+  echo "$HOME/.zshrc.main already exists. zsh setup may be incomplete."
+fi
+
 if [[ ! -f $HOME/.zshrc ]]; then
   cp zsh/zshrc $HOME/.zshrc
+else
+  echo "$HOME/.zshrc already exists. zsh setup may be incomplete."
 fi
+
+source $HOME/.zshrc
 
 echo "Completed setting up zsh!"
