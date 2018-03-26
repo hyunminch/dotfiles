@@ -28,16 +28,20 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 # Copy neovim configuration
 echo "Configuring init.vim..."
-mkdir -p ~/.config/nvim
-cp nvim/init.vim ~/.config/nvim/init.vim
+mkdir -p $HOME/.config/nvim
+if [[ ! -f $HOME/.config/nvim/init.vim ]]; then
+  ln -s $HOME/dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim
+else
+  echo "$HOME/.config/nvim/init.vim already exists."
+fi
 
 # Create a symbolic link of init.vim at ~/.nvimrc
 # Does not make a link when ~/.nvimrc already exists
 echo "Creating a symbolic link for init.vim at ~/.nvimrc..."
 if [[ ! -f ~/.nvimrc ]]; then
-  ln -s ~/.config/nvim/init.vim ~/.nvimrc
+  ln -s $HOME/.config/nvim/init.vim $HOME/.nvimrc
 else
-  echo "~/.nvimrc already exists. Omitting the symbolic link process."
+  echo "$HOME/.nvimrc already exists. Omitting the symbolic link process."
 fi
 
 # Install neovim plugins
