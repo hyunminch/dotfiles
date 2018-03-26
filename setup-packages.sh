@@ -9,7 +9,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     sudo apt update
 
     echo "Installing utilities..."
-    sudo apt install build-essential git vim curl wget screen tmux openjdk-8-jdk
+    sudo apt install build-essential git vim curl wget screen tmux openjdk-8-jdk httpie
 
     echo "Installing CockroachDB..."
     echo "You might want to clean up any CockroachDB related zip files afterwards!"
@@ -34,7 +34,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   brew install python
 
   echo "Installing utilities..."
-  brew install git vim grep screen tmux curl wget
+  brew install git vim grep screen tmux curl wget httpie
   brew install gnu-sed --with-default-names
 
   echo "Installing CockroachDB..."
