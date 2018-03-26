@@ -32,7 +32,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 Plug 'tpope/vim-fugitive'
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 
 Plug 'derekwyatt/vim-scala'
 Plug 'posva/vim-vue'
@@ -40,12 +40,3 @@ Plug 'posva/vim-vue'
 call plug#end()
 
 colorscheme dracula 
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
