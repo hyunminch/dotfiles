@@ -12,10 +12,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     sudo apt update
     sudo apt install sbt
 
-    echo "Installing Scala 2.12.4..."
-    sudo wget http://scala-lang.org/files/archive/scala-2.12.4.deb
-    sudo dpkg -i scala-2.12.4.deb
-    rm -f scala-2.12.4.deb
+    echo "Installing Scala 2.13.1..."
+    sudo wget http://scala-lang.org/files/archive/scala-2.13.1.deb
+    sudo dpkg -i scala-2.13.1.deb
+    rm -f scala-2.13.1.deb
 
     echo "Not installing Dotty for Ubuntu."
     echo "Visit http://dotty.epfl.ch/ if you need to."
@@ -44,4 +44,3 @@ else
 fi
 
 echo "Completed setting up a scala development environment!"
-

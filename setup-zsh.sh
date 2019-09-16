@@ -2,7 +2,7 @@
 
 echo "Setting up zsh..."
 
-if [[ "$OSTYPE" == "linux-gnu" ]]; then  
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
   sudo apt install zsh
   sudo chsh -s /bin/zsh
 elif [[ "$OSTYPE" == "darwin"* ]]; then

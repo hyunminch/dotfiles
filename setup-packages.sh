@@ -13,9 +13,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     echo "Installing CockroachDB..."
     echo "You might want to clean up any CockroachDB related zip files afterwards!"
-    wget -qO- https://binaries.cockroachdb.com/cockroach-v1.1.6.linux-amd64.tgz | tar xvz
-    sudo cp -i cockroach-v1.1.6.linux-amd64/cockroach /usr/local/bin
-    rm -rf cockroach-v1.1.6.linux-amd64
+    curl https://binaries.cockroachdb.com/cockroach-v19.1.4.darwin-10.9-amd64.tgz | tar -xJ
+    sudo cp -i cockroach-v19.1.4.darwin-10.9-amd64/cockroach /usr/local/bin
+    rm -rf cockroach-v19.1.4.darwin-10.9-amd64
   else
     echo "Only supports Ubuntu distros. Aborting setup."
     exit 1
